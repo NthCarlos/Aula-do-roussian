@@ -1,0 +1,65 @@
+Revisão N1 Roussian
+
+#XML
+- XSD
+- Prefixo
+- xsd:sequence
+- JAX-RS API
+- API
+
+#REST
+- Características
+- Recursos
+- Definição de REST
+- MVC
+- Quais são os principais métodos HTTP e suas funcionalidades.
+- PUT e POST
+
+> Um **Método HTTP** é idempotente se retornar o mesmo o resultado todas as vezes.
+> - GET
+> - PUT
+> - DELETE
+> - PATCH
+> - OPTIONS
+> **Não**
+> - POST
+
+- Anotações Spring
+  - RestController;
+  - ResponseBody;
+  - PathParameter;
+  - RequestMapping;
+
+- Qual é o formato de um parâmetro é passado em uma requisição GET.
+
+Arquitetura REST
+
+1. Interface Uniforme
+2. Cliente-Servidor
+3. Sem Estado
+4. Cache
+5. Sistema em Camadas
+6. Código sob demanda
+
+Model
+● O modelo gerencia os dados do aplicativo e o estado.
+● Entre suas responsabilidades está o processamento de dados de e para um armazenamento de dados,
+como um banco de dados.
+● Um modelo é independente dos controladores e das visualizações, permitindo que sejam reutilizados
+com diferentes interfaces de usuário.
+View
+● Responsável pela apresentação do aplicativo.
+● É a parte do aplicativo que fica visível para o usuário.
+● A visualização exibe dados para o usuário em uma interface apropriada com base nas informações
+recebidas do controlador
+Controller
+● Um controlador atua como um intermediário entre o modelo e a visualização.
+● Conforme os usuários navegam em um aplicativo da web, as solicitações são roteadas para o
+controlador apropriado com base na configuração de roteamento.
+● Um controlador executa a lógica do aplicativo para selecionar a visualização apropriada e envia a ela as
+informações de que precisa para renderizar a interface do usuário.
+
+Namespace
+Fornece um método para evitar conflitos de nomes de elementos.
+
+O conceito fundamental de REST é um recurso, que é qualquer coisa que pode ser acessada ou manipulada.
