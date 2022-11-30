@@ -1,4 +1,8 @@
-docker containner -run = executa e inicia o comando docker
+O comando run executa vários comandos automaticamente:
+1-Download automático das imagens não encontradas: docker image pull <nome_imagem>
+2-Criação do container: docker container create
+3-Execução do container: docker container start
+4-Uso do modo interativo: docker container exec
 docker image list = Lista as imagens que seu Docker host tem localmente;
 docker image pull <nome_imagem> = Faz o download da imagem <nome_imagem> da nuvem pública do Docker;
 docker image inspect <nome_imagem> = Inspeciona a imagem - informar todos os dados referentes à imagem;
@@ -64,3 +68,31 @@ CMD. Define um comando para ser executado quando um container com esta imagem in
 
 EXPOSE não é um comando que libera a porta, ele serve para ficar documentado no Dockerfile quais portas deverão ser liberadas ao criar o container.
 
+Quais são os comandos do Dockerfile?
+
+FROM para informar qual imagem usaremos como base, nesse caso foi ubuntu:16.04.
+Deve ser o primeiro comando de um Dockerfile, com ele configuramos qual a imagem que queremos utilizar como base na nossa imagem.
+exemplo: FROM debian
+
+RUN
+Usado para executar comandos no contêiner, geralmente usado para instalar pacotes.
+
+Como um container se comunica com outras aplicações fora do container? (através de portas) E como configura a porta que ele comunica?
+EXPOSE
+Configura portas que o container irá expor, e então o container será acessível por essas portas.
+exemplo: EXPOSE 80
+
+Mapeamento de Portas: docker container run -it --rm -p <host>:<container> <imagem>
+
+-p recebe um parâmetro que normalmente é composto por dois números
+separados por : (dois pontos).
+O primeiro é no host e o segundo é no container;
+
+
+O que acontece se uma instrução falhar no Dockerfile? (começa as instruções desde o começo ou de onde esta o erro?)
+Se uma instrução falhar, na próxima criação da imagem (build), apenas a instrução de onde ocorreu o erro e as posteriores serão executadas.
+o arquivo Dockerfile é uma sequência de instruções lidas do topo à base e cada linha é executada por vez.
+Temos total rastreabilidade sobre o que será modificado na nova imagem. Pois, o Dockerfile será armazenado no sistema de controle de versão.
+O resultado de cada instrução do arquivo é armazenado em cache local. 
+Caso o Dockerfile não seja modificado na próxima criação da imagem (build), o processo não será demorado, pois tudo estará no cache.
+Se houver alterações, apenas a instrução modificada e as posteriores serão executadas novamente.
