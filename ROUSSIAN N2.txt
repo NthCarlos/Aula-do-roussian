@@ -62,5 +62,5 @@ a. docker container commit newContainer meuubuntu:nginx
 
 CMD. Define um comando para ser executado quando um container com esta imagem inicializar.
 
-
+EXPOSE não é um comando que libera a porta, ele serve para ficar documentado no Dockerfile quais portas deverão ser liberadas ao criar o container.
 
