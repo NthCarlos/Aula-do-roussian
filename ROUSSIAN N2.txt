@@ -1,0 +1,66 @@
+docker containner -run = executa e inicia o comando docker
+docker image list = Lista as imagens que seu Docker host tem localmente;
+docker image pull <nome_imagem> = Faz o download da imagem <nome_imagem> da nuvem pública do Docker;
+docker image inspect <nome_imagem> = Inspeciona a imagem - informar todos os dados referentes à imagem;
+docker container ps = Lista todos os containers ativos
+docker container ls = Lista todos os containers
+docker search = Busca por todas as imagens públicas disponíveis;
+
+
+Conteinerização é o empacotamento do código de software com todos os componentes necessários, como bibliotecas, frameworks e outras dependências, 
+para que fiquem isolados em seu próprio "container".
+Virtualização = É o processo de executar uma instância virtual
+de um sistema de computador em uma camada
+abstraída do hardware real.
+Baixo desempenho;
+Alto consumo de recursos;
+Disponibiliza imagens de grande
+tamanho;
+
+Docker empacotam componentes de software
+em um sistema de arquivos completo que
+contém tudo necessário para a execução:
+código, ferramentas de sistema - qualquer coisa
+que possa ser instalada em um servidor.
+
+Um contêiner é uma instância em
+execução de uma imagem.
+Uma imagem pode ser pensada como uma coleção de todos os arquivos
+necessários para executar seu aplicativo, juntamente com a receita de como
+usá-lo. 
+
+docker container run -d = executar em segundo plano;
+
+O COPY tem uma responsabilidade bastante simples: copiar os itens da origem, sem nenhuma manipulação automática, para o destino.
+ADD capaz de realizar extrações ao mesmo tempo em que copia arquivos compactados, tornou-se bastante comum casos em que apenas copiava quando 
+você esperava por uma extração e extração quando queria apenas copiar.
+
+COMMIT = Cria-se imagens a partir do container = docker commit docker container commit
+O Dockerfile usa uma DSL (Linguagem Específica de Domínio) básica com
+instruções para criar imagens do Docker. Recomenda-se a abordagem Dockerfile sobre commit do docker, pois
+fornece um mecanismo mais repetitivo e transparente para criar
+imagens.
+docker build
+
+Execute o seguinte comando:
+a. touch arquivo_teste
+2. Crie um arquivo chamado de Dockerfile com o seguinte conteudo:
+a. FROM ubuntu:16.04
+b. RUN apt-get update && apt-get install nginx -y
+c. COPY arquivo_teste /tmp/arquivo_teste
+d. CMD bash
+
+Primeiro cria-se um container qualquer:
+a. docker container run -it --name newContainer ubuntu bash
+2. Realiza alterações no container criado;
+a. apt-get update
+b. apt-get install nginx -y
+c. exit
+3. Termina o container;
+4. Efetua-se o commit desse container em uma imagem:
+a. docker container commit newContainer meuubuntu:nginx
+
+CMD. Define um comando para ser executado quando um container com esta imagem inicializar.
+
+
+
