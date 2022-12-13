@@ -1,0 +1,18 @@
+javaxws e javaxrs qual a diferença?
+get e post a diferença?
+put e post a diferença?
+oque é web service?
+qual as vantagens de utilizar uma api?
+porque utilizar o web service?
+qual as vantagens de xml? oque? e porque utilizar?
+oque e xsd?
+oque é namespace?
+oque e prefixo?
+oque é rest?
+oque é hateoas?
+implementar o hateoas?
+o status de respostas do rest?
+oque e recurso?
+quantos namespace vc pode ter no xml?
+quais sao os cinco comuns metodos do rest?
+quais as caracteristicas do rest?
