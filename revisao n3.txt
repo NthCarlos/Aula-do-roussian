@@ -1,0 +1,258 @@
+Entrega Contínua : É a capacidade de obter alterações de todos os tipos - incluindo novos
+recursos, alterações de configuração, correções de bugs e experimentos - na
+produção ou nas mãos dos usuários, com segurança e rapidez, de maneira
+sustentável.
+Mudar cada fase do processo de entrega tradicional em uma sequência de
+scripts é chamada de pipeline de implantação automatizada ou de entrega
+contínua.
+
+Vantagens:
+● Entrega rápida;
+● Ciclo de feedback rápido;
+● Liberações de baixo risco;
+● Flexibilidade de liberação;
+
+Pipeline de Implantação Automatizada : É uma sequência de scripts executados após cada alteração de código
+confirmada no repositório.
+Se o processo for bem-sucedido, ele termina com a implantação no ambiente
+de produção.
+
+Integração Contínua : A fase de integração contínua fornece o primeiro feedback para os
+desenvolvedores.
+● Verifica o código do repositório, o compila, executa testes unitários.
+● Se alguma etapa falhar, a execução do pipeline será interrompida e a
+primeira coisa que os desenvolvedores devem fazer é corrigir a
+construção da Integração Contínua.
+
+Teste de Aceitação Automatizado :É um conjunto de testes detalhados em conjunto com o cliente;
+Ele atua como um portão de qualidade para decidir se um produto está pronto
+para o lançamento ou não.
+Toda a ideia de automatizar a fase de aceitação é incorporar a qualidade ao
+produto, em vez de verificar posteriormente. Quando um desenvolvedor conclui a implementação, o software já é entregue
+juntamente com testes de aceitação que verificam se o software é o que o
+cliente queria.
+
+Gerenciamento de Configuração : É responsável por rastrear e controlar as alterações no software e seu
+ambiente.
+Trata-se de cuidar da preparação e instalação das ferramentas necessárias, de
+escalar o número de instâncias de serviço e de todas as tarefas relacionadas à
+implantação do aplicativo.
+
+Cultura DevOps : Quando o software era escrito por único desenvolvedor ou por pequenas
+equipes, não havia uma separação clara entre desenvolvimento, garantia de
+qualidade e operações.
+● Uma pessoa desenvolve o código, testa-o e depois o coloca na produção.
+● Se algo desse errado, a mesma pessoa investigava o problema, corrigia-o
+e reimplementava-o na produção.
+
+DevOps é um profissional que lida com três áreas diferentes: desenvolvimento,
+garantia de qualidade e operações de entrega - Não necessariamente precisa
+ser desenvolvedor.
+
+Processo Tradicional de Entrega : 
+Desenvolvimento:
+● Os desenvolvedores trabalham no produto com técnicas ágeis (Scrum ou
+Kanban) para aumentar a velocidade de desenvolvimento e melhorar a
+comunicação com o cliente. As sessões de demonstração são
+organizadas para obter o feedback rápido de um cliente;
+Garantia da Qualidade:
+● Essa fase requer um congelamento de código na base de código do
+tronco, para que nenhum novo desenvolvimento interrompa os testes. A
+equipe de controle de qualidade executa um conjunto de testes de
+integração, testes de aceitação e testes não funcionais.
+● Qualquer erro detectado volta para a equipe de desenvolvimento;
+Operações:
+● A última fase, geralmente a mais curta, significa passar o código para a
+equipe de Operações, para que eles possam executar a liberação e
+monitorar a produção. Se algo der errado, eles entrarão em contato com
+os desenvolvedores para ajudar no sistema de produção;
+Desvantagens:
+● Entrega lenta;
+● Ciclo de feedback longo;
+● Falta de automação;
+● Estresse;
+● Má comunicação;
+● Responsabilidade compartilhada:
+
+Definição
+Git : ● É um sistema de Controle de Versão.
+● O controle de versão é um sistema que registra
+alterações em um arquivo ou conjunto de
+arquivos ao longo do tempo para que se possa
+recuperar versões específicas posteriormente.
+
+Modelo
+Centralizado (CVC) : Servidor Único que contém todos os arquivos com
+controle de versão e vários clientes que fazem o
+check-out dos arquivos daquele local central.
+
+Cada usuário obtém sua própria cópia de trabalho,
+mas há apenas um repositório central.
+Assim que você se comita (commit), é possível que
+seus colegas de trabalho atualizem e vejam suas
+alterações. Para que outras pessoas vejam suas
+alterações, duas coisas devem acontecer:
+● Você comita (commit)
+● Eles atualizam (update)
+
+Modelo Distribuído : Ainda há um servidor que mantém os repositórios
+compartilhados e com o qual os clientes
+interagem.
+No entanto, quando os usuários desejam começar
+a fazer alterações, em vez de obter arquivos ou
+diretórios individuais do servidor, eles obtêm uma
+cópia de todo o repositório.
+A cópia vem do lado do servidor e tem todo o
+conteúdo (incluindo histórico) até o momento em
+que a cópia é criada.
+
+Cada usuário obtém seu próprio repositório e
+cópia de trabalho.
+Depois de você comitar (commit), outros não têm
+acesso às suas alterações até que você as envie (
+por push) para o repositório central.
+Quando você atualiza (update), você não obtém as
+alterações dos outros, a menos que primeiro tenha
+puxado (pull) essas alterações para o seu
+repositório.
+
+
+Em um diretório de trabalho (projeto), cria-se um repositório de versionamento:
+● git init
+Observe que foi criada uma pasta oculta com o nome .git
+Podemos ver a situação dos arquivos no repositório Git com o comando:
+● git status
+A mensagem desse comando irá mostrar os arquivos não rastreados pelo Git,
+caso o projeto tenha novos arquivos.
+A área de stage :
+● Quando informamos para o Git que queremos rastrear um arquivo, o Git
+coloca esse arquivo em uma área especial do repositório, chamada de
+stage.
+● Uma vez que um arquivo está na área de stage, todas as mudanças nesse
+arquivo passam a ser rastreadas.
+Para que o arquivo seja rastreado, devemos executar o seguinte comando:
+git add <<nome_arquivo>>
+Adicionar vários arquivos:
+git add .
+Para gravarmos as mudanças no repositório, devemos executar o comando:
+git commit -m "<<msg_das_alterações>>"
+Para verificar o histórico das alterações gravadas no repositório, podemos
+executar o comando:
+git log
+
+Para que serve a área de stage?
+Essa separação entre rastrear e gravar permite que as mudanças que são
+feitas no código sejam agrupadas de maneira lógica.
+Dessa forma, podemos montar commits menores, que farão mais sentido
+posterior ao se revisar o histórico do projeto e ajudarão ao mesclar nossas
+mudanças com as dos outros membros da equipe.
+
+Maven - O que é?
+● Uma ferramenta usada para construir artefatos implantáveis a partir do
+código-fonte.
+○ Focada exclusivamente no pré-processamento, compilação, empacotamento, teste e
+distribuição.
+● Uma ferramenta de gerenciamento de projeto.
+○ Pode executar relatórios, gerar um site e facilitar a comunicação entre os membros de
+uma equipe de trabalho.
+
+Maven -Características
+● Estrutura padronizada de diretório;
+● Uma interface comum;
+● Gerenciamento de Dependências;
+● Suporte de ferramentas;
+● Arquitetura baseada em plugins;
+
+O que é Virtualização
+É o processo de executar uma instância virtual
+de um sistema de computador em uma camada
+abstraída do hardware real.Mais comumente, permite execução
+simultânea de vários sistemas operacionais em
+um sistema de computador.
+Virtual Machine (máquina virtual);
+● Baixo desempenho;
+● Alto consumo de recursos;
+● Disponibiliza imagens de grande
+tamanho;
+
+Definição formal - O que é Docker?
+Docker empacotam componentes de software
+em um sistema de arquivos completo que
+contém tudo necessário para a execução:
+código, ferramentas de sistema - qualquer coisa
+que possa ser instalada em um servidor.
+
+O que é uma Imagem Docker?
+Uma imagem é um bloco de construção do Docker.
+Uma imagem pode ser pensada como uma coleção de todos os arquivos
+necessários para executar seu aplicativo, juntamente com a receita de como
+usá-lo. 
+
+O que é Container?
+Um contêiner é uma instância em
+execução de uma imagem.
+Podemos criar muitos contêineres a
+partir da mesma imagem se
+quisermos ter muitas instâncias do
+mesmo aplicativo.
+
+Definições - Containers e Imagens
+Um contêiner Docker é a mesma ideia de
+um contêiner físico - pense nele como uma
+caixa com um aplicativo dentro.
+Dentro da caixa, o aplicativo parece ter um
+computador só para ele: tem seu próprio
+nome de máquina e endereço IP, e também
+tem sua própria unidade de disco.
+
+O que é uma Imagem?
+A imagem contém todo o conteúdo de um aplicativo, junto com instruções
+que informam ao Docker como iniciar o aplicativo
+
+
+● docker image list
+○ Lista as imagens que seu Docker host tem localmente;
+● docker image pull <nome_imagem>
+○ Faz o download da imagem <nome_imagem> da nuvem pública do Docker;
+● docker image inspect <nome_imagem>
+○ Inspeciona a imagem - informar todos os dados referentes à imagem;
+● docker search <nome_imagem>
+○ Busca por todas as imagens públicas disponíveis;
+docker container ps
+. lista todos os containers ativos
+docker container ls
+. lista todos os containers
+
+● O comando run executa vários comandos automaticamente:
+○ Download automático das imagens não encontradas: docker image pull
+○ Criação do container: docker container create
+○ Execução do container: docker container start
+○ Uso do modo interativo: docker container exec
+
+Imagens não oficiais
+● As imagens não oficiais são mantidas pelos usuários que as criaram.
+Imagens oficiais
+● As imagens oficiais são mantidas pela empresa docker e disponibilizadas
+na nuvem docker.
+
+Criando uma Imagem Docker
+Commit
+● Cria-se imagens a partir do container.
+● Pense neste método como a realização de um commit em um sistema de
+controle de versão.
+● Ele usa o status atual do container escolhido e cria a imagem como base
+nele;
+○ Cria-se um contêiner, fazemos alterações nesse contêiner como se
+altera o código e, em seguida, confirma essas alterações em uma
+nova imagem;
+
+Criando uma Imagem Docker
+Dockerfile
+● O Dockerfile usa uma DSL (Linguagem Específica de Domínio) básica com
+instruções para criar imagens do Docker.
+● Recomenda-se a abordagem Dockerfile sobre commit do docker, pois
+fornece um mecanismo mais repetitivo e transparente para criar
+imagens.
+● Depois de se ter um Dockerfile, usa-se o comando docker build para
+criar uma nova imagem a partir das instruções no Dockerfile.
+
