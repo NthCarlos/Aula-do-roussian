@@ -1,0 +1,90 @@
+javaxws e javaxrs qual a diferença?
+- 1. JAX-WS
+○ API para Web Services baseados em SOAP
+2. JAX-RS
+○ API para Web Services baseados em REST
+get e post a diferença?
+- Obter todas as informações dos clientes, é também de um cliente especifico, e a função do POST é adicionar um cliente.
+put e post a diferença?
+- Atualizar um cliente existente e o POST Adicionar um cliente.
+oque e API?
+- Uma API é a interface que um software apresenta a outros softwares, a
+humanos e, no caso de APIs da Web, ao mundo através da Internet.
+oque é web service?
+- Fornecem mecanismos para integrar sistemas distintos com intuito de
+expor funções de negócio (regras de negócio) reutilizáveis, por meio da
+utilização do protocolo HTTP. Permite que softwares executados em plataformas de computação
+distintas colaborem.
+qual as vantagens de utilizar uma api?
+- 
+porque utilizar o web service?
+- 1 - Interoperabilidade - aplicações em diferentes linguagens, diferentes plataformas.
+2 - Projeto fracamente acoplado - pouco conhecimento sobre a implementação do serviço.
+3 - Extensibilidade - as aplicações consumidoras podem estender suas funcionalidadesconsumindo web services.
+qual as vantagens de xml? oque? e porque utilizar?
+- É uma meta-linguagem definida por uma especificação.
+● Define regras para a criação de linguagens de marcação XML.
+● Uma linguagem para definir outras linguagens. 
+1. Linguagem de marcação de acordo com
+a necessidade de um serviço
+específico;
+2. Carrega os dados e os metadados.
+3. É autodescritivo;
+○ Organiza o texto em uma hierarquia;
+○ Descreve sua organização diretamente
+no texto.
+4. Regras bem formadas;
+○ Validação de dados.
+1 - Troca de dados entre aplicações.
+3 - Salvar e Manipular Dados
+● Apresentar os dados em HTML;
+● Persistência;
+● Transferência de dados;
+oque e xsd? e porque utilizar?
+- Um esquema descreve a estrutura de um documento XML em termos de
+tipos complexos e tipos simples. O Arquivo de Esquema XML (XSD) é um contrato entre dois usuários XML.
+oque é namespace?
+- Namespaces impedem conflitos de nomes de elementos e atributos e permitem que elementos e atributos de mesmo nome sejam tratados e validados de maneira diferente.
+oque e prefixo?
+- Conflitos de nome em XML podem ser facilmente evitados usando um prefixo de nome.
+você define prefixos para URIs de namespace e usa os prefixos para qualificar nomes de atributo e elemento nos dados XML.
+oque é rest?
+- Representational State Transfer (REST) é um estilo de arquitetura que descreve como um sistema se
+comunica ou compartilha o estado com outro sistema.
+O conceito fundamenal de REST é um recurso, que é qualquer coisa que pode ser acessada ou manipulada.
+oque é hateoas?
+- HATEOAS (Hypermedia as the Engine of Application State) é uma restrição
+da arquitetura de uma API REST.
+● Com o HATEOAS, os web services RESTful fornecem informações
+dinamicamente por meio de hypermedia. 
+implementar o hateoas?
+- Para adicionar o padrão HATEOAS, vamos utilizar o Spring HATEOAS.
+● Fornece uma API que facilita a criação de links hypermedia nas respostas
+da API Rest .
+○ Facilita a criação manual dos links.
+○ Permite a criação automática dos links.
+Adicionar a seguinte dependência no pom.xml:
+spring-boot-starter-hateoas
+oque e hypermedia?
+- Refere-se a qualquer conteúdo que contenha links para outras formas de
+mídia, como imagens, filmes e texto. 
+o status de respostas do rest?
+- GET: ○ 200 OK se a resposta contém dados.
+○ 204 Not Content se a resposta não contém
+○ 404 Not found se nenhum cliente foi encontrado.
+POST: ○ 201 Created se as informações forem criadas com sucesso
+PUT: ○ 200 OK se a atualização ocorreu com sucesso
+○ 404 Not found se nenhum cliente foi encontrado.
+PATCH: ○ 200 OK caso a operação ocorra com sucesso
+○ 404 Not found se nenhum cliente foi encontrado.
+DELETE: ○ 204 Not Content caso a deleção seja realizada
+○ 404 Not found se nenhum cliente foi encontrado
+oque e recurso?
+- 
+quantos namespace vc pode ter no xml?
+- quantos voce quiser
+quais sao os cinco comuns metodos do rest?
+- POST, PUT , GET, PATCH e DELETE.
+quais as caracteristicas do rest?
+- Interface Uniforme, Cliente-Servidor, Sem estado, Cacheable, Sistema em camadas e Código sob demanda
+
